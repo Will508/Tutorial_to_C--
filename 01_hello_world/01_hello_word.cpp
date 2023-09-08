@@ -1,24 +1,10 @@
 #include <iostream>
+#include "Sales_item.h"
 using namespace std;
 
 int main()
 {
-	int currVal = 0, val = 0;
-	if (cin >> currVal)
-	{
-		int cnt = 1;
-		while (cin >> val)
-		{
-			if (val == currVal)
-				++cnt;
-			else
-			{
-				cout << currVal << " occurs " << cnt << " times" << endl;
-				currVal = val;
-				cnt = 1;
-			}
-		}
-		cout << currVal << " occurs " << cnt << " times" << endl;
-	}
+	cout << "who goes with F\145rgus?\012" << endl;
+
 	return 0;
 }
