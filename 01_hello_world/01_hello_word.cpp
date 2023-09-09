@@ -4,7 +4,10 @@ using namespace std;
 
 int main()
 {
-	cout << "who goes with F\145rgus?\012" << endl;
-
+	int val = 42;
+	int *p = &val;
+	cout << p << endl;
+	cout << *p << endl;
+	cout << *&(*p) << endl;
 	return 0;
 }

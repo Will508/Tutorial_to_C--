@@ -39,7 +39,29 @@ long double ld = 3.14;
 int a{ld}, b = {ld}; //报错转换无法执行，因为丢失了信息
 int c(ld), d = ld; //无报错转换执行，但也确实丢失了部分值
 ```
+---
+*引用*
+`int &b = a; //将a的地址赋予b，让b变成a的别名，&b表示的是a和b的地址信息`
+*指针*
+`int val = 42; int *p = &val; //将val的地址赋予p，*p获得了val的值`
+*和&两者相互转换组成复合类型，&是取地址符，×是解引用符
+如果想要生成一个空指针(null pointer)不指向任何对象，共用以下几种方法：
+```C++
+int *p0 = 0;
+int *p1 = nullptr; //和int *p1 = 0;等价
+int *p2 = 0; //将p2初始化为常量0
+int *p3 = NULL; //需要#include <cstdlib>
+```
+*void* 指针*
+void*是一种特殊指针类型，可以存放任何对象的地址，但int*指针只能存放int对象的地址
 
+*const限定符*
+const对象初始化之后无法被改变，如果改变将引发错误，const对象仅在文件内有效，在多个文件中出现同名const变量时，它们是相对独立的变量。
+如果想要在文件之间共享，需要对const变量的声明和定义添加extern关键字，这样就可以在多个文件中使用：
+```cpp
+extern const int bufSize = fcn(); //在file_1.cc中定义并初始化
+extern const int bufSize; //在file_1.h中的声明，和.cc文件中是同一个
+```
 
 
 
