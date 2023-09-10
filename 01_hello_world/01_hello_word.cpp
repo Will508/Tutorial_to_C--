@@ -4,10 +4,9 @@ using namespace std;
 
 int main()
 {
-	int val = 42;
-	int *p = &val;
-	cout << p << endl;
-	cout << *p << endl;
-	cout << *&(*p) << endl;
+	const int *ptr;
+	int val;
+	ptr = &val;
+	cout << *ptr << " " << ptr << endl;
 	return 0;
 }

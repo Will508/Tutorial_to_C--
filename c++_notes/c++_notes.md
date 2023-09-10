@@ -62,6 +62,10 @@ const对象初始化之后无法被改变，如果改变将引发错误，const�
 extern const int bufSize = fcn(); //在file_1.cc中定义并初始化
 extern const int bufSize; //在file_1.h中的声明，和.cc文件中是同一个
 ```
+const int* 和 int* const是不一样的，前者是指针指向的内容是常量，后者是指针本身是常量
+const一般可以用于对一些重要参数的保护，如果有语句尝试对const内容进行修改，编译器会指出错误，保证程序的稳定性，对于非内部数据类型的输入参数，因此建议把“值传递”的方式改为“const引用传递”，提高效率，例如将`void func(A a)`改为`void func(const A &a)`，但对于内部数据类型的输入参数，不建议这么做，因为既无法提高效率也降低了函数的可理解性，例如`void func(int x)`不应该改为`void func(const int &x)`
+*在类中使用const*
+在类中任何不修改数据成员的函数都应该声明为const类型，如果在编写成员函数时不慎修改，编译器将报错，提高了程序的健壮性。
 
 
 
