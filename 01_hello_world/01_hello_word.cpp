@@ -1,12 +1,29 @@
 #include <iostream>
-#include "Sales_item.h"
+#include <string>
 using namespace std;
+
+class Apple
+{
+	int i;
+
+public:
+	Apple()
+	{
+		i = 0;
+		cout << "inside constructor\n";
+	}
+	~Apple()
+	{
+		cout << "inside destructor\n";
+	}
+};
 
 int main()
 {
-	const int *ptr;
-	int val;
-	ptr = &val;
-	cout << *ptr << " " << ptr << endl;
+	int x = 0;
+	if (x == 0)
+	{
+		Apple obj
+	}
 	return 0;
 }
